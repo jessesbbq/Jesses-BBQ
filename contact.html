@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact & Quote — Jesse’s BBQ | Cypress, Texas</title>
+  <meta name="description" content="Contact Jesse’s BBQ for catering, events, and pop-ups. Request a quote today. Call/Text 281-732-1862." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="badge">🔥 Let’s Feed Your Crowd</span>
+      <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo">
+        <div class="brand-text">
+          <div class="brand-name">Jesse’s BBQ</div>
+          <div class="brand-sub">Catering • Pop-Ups • Events • Competition Team</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="catering.html">Catering</a>
+        <a class="nav-link" href="events.html">Events</a>
+        <a class="nav-link" href="competition.html">Competition</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="section tight">
+      <div class="container">
+        <span class="badge">📞 Contact & Quotes</span>
+        <h1 class="h1">Get a Quote or Book Jesse’s BBQ</h1>
+        <p class="muted">
+          Tell us your date, guest count, and event type — we’ll get back with pricing fast.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="section">
+      <div class="container grid3">
+
+        <div class="tile">
+          <div class="tile-icon">📞</div>
+          <div class="tile-title">Call or Text</div>
+          <div class="tile-text">
+            Fastest way to book or ask questions.
+          </div>
+          <a class="btn primary" href="tel:+12817321862">(281) 732-1862</a>
+        </div>
+
+        <div class="tile">
+          <div class="tile-icon">💬</div>
+          <div class="tile-title">Text for Quick Pricing</div>
+          <div class="tile-text">
+            Send date + guest count for quick estimate.
+          </div>
+          <a class="btn primary" href="sms:+12817321862">Text Now</a>
+        </div>
+
+        <div class="tile">
+          <div class="tile-icon">📍</div>
+          <div class="tile-title">Service Area</div>
+          <div class="tile-text">
+            Cypress • Houston • Surrounding Areas
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="section tight" id="quote">
+      <div class="container">
+        <h2 class="h2">Request Catering Quote</h2>
+        <p class="muted">Fill this out and we’ll contact you.</p>
+
+        <!-- FORM -->
+        <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="contact-form">
+
+          <!-- replace with your email -->
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </div>
+
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="date" name="event_date">
+          </div>
+
+          <div class="form-row">
+            <input type="text" name="event_type" placeholder="Event Type (wedding, party, corporate)">
+            <input type="number" name="guests" placeholder="Guest Count">
+          </div>
+
+          <textarea name="details" placeholder="Tell us what you need (meats, sides, location, time)" rows="5"></textarea>
+
+          <button type="submit" class="btn primary">Request Quote</button>
+
+        </form>
+
+        <div class="note">
+          ⚠️ Replace <strong>YOUR_EMAIL_HERE</strong> above with your email to receive quote requests.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="h2">Let’s Smoke Something Amazing</h2>
+          <p class="muted">Dates fill fast — reserve early.</p>
+        </div>
+        <a class="btn primary" href="tel:+12817321862">Call/Text 281-732-1862</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Jesse’s BBQ</strong><br>
+        Cypress, Texas
+      </div>
+      <div>© <span id="year"></span> Jesse’s BBQ</div>
+    </div>
+  </footer>
+
+</body>
+</html>
