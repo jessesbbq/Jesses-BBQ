@@ -1,152 +1,395 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact & Quote — Jesse’s BBQ | Cypress, Texas</title>
-  <meta name="description" content="Contact Jesse’s BBQ for catering, events, and pop-ups. Request a quote today. Call/Text 281-732-1862." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/main.js"></script>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jesse's BBQ</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#090909;
+      --bg-soft:#121212;
+      --card:#181818;
+      --border:#2a2a2a;
+      --text:#f7f2eb;
+      --muted:#d9cbbc;
+      --accent:#e56a1c;
+      --accent-dark:#b64a08;
+      --white:#ffffff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Montserrat", sans-serif;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1100px, 92%);
+      margin:auto;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(9,9,9,.96);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+    }
+
+    .nav-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:12px;
+      padding:16px 0;
+    }
+
+    .brand{
+      font-family:"Bebas Neue", sans-serif;
+      font-size:34px;
+      letter-spacing:2px;
+      color:var(--accent);
+      line-height:1;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      width:100%;
+    }
+
+    .nav-links a{
+      color:var(--white);
+      font-size:14px;
+      font-weight:600;
+      opacity:.95;
+    }
+
+    .header{
+      padding:72px 0 30px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      color:#ffb36f;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .header h1{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:56px;
+      letter-spacing:2px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .header p{
+      max-width:760px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    section{
+      padding:64px 0;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:28px;
+    }
+
+    .card h2{
+      margin:0 0 16px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:40px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .card p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .info-item{
+      margin:16px 0;
+    }
+
+    .info-item strong{
+      display:block;
+      color:#fff;
+      margin-bottom:4px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:10px;
+      font-weight:700;
+      text-align:center;
+      transition:.2s ease;
+      margin-top:8px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      margin-left:10px;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .topics{
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+    }
+
+    .topics li{
+      margin:10px 0;
+    }
+
+    .note{
+      text-align:center;
+      color:#a89786;
+      max-width:780px;
+      margin:0 auto;
+      font-size:15px;
+    }
+
+    footer{
+      background:#070707;
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:40px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    footer h3{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:30px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    footer p,
+    footer a{
+      margin:8px 0;
+      color:var(--muted);
+      display:block;
+    }
+
+    .copyright{
+      text-align:center;
+      color:#9d8c7a;
+      font-size:14px;
+      margin-top:22px;
+    }
+
+    @media (max-width: 900px){
+      .contact-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .header h1{
+        font-size:46px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .brand{
+        font-size:30px;
+      }
+
+      .nav-links{
+        gap:10px 14px;
+      }
+
+      .nav-links a{
+        font-size:13px;
+      }
+
+      .header{
+        padding:58px 0 24px;
+      }
+
+      .header h1{
+        font-size:40px;
+      }
+
+      .header p{
+        font-size:17px;
+      }
+
+      .card h2{
+        font-size:34px;
+      }
+
+      .btn{
+        display:block;
+        width:100%;
+      }
+
+      .btn-secondary{
+        margin-left:0;
+      }
+    }
+  </style>
+</head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span class="badge">🔥 Let’s Feed Your Crowd</span>
-      <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand">JESSE'S BBQ</div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="catering.html">Catering</a>
+        <a href="popups.html">Pop-Ups</a>
+        <a href="competitions.html">Competition Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
-  </div>
+  </nav>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo">
-        <div class="brand-text">
-          <div class="brand-name">Jesse’s BBQ</div>
-          <div class="brand-sub">Catering • Pop-Ups • Events • Competition Team</div>
-        </div>
-      </a>
-
-      <nav class="nav">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="menu.html">Menu</a>
-        <a class="nav-link" href="catering.html">Catering</a>
-        <a class="nav-link" href="events.html">Events</a>
-        <a class="nav-link" href="competition.html">Competition</a>
-        <a class="nav-link active" href="contact.html">Contact</a>
-      </nav>
+  <section class="header">
+    <div class="container">
+      <div class="eyebrow">Contact Jesse’s BBQ</div>
+      <h1>Let’s Talk BBQ</h1>
+      <p>
+        Contact Jesse’s BBQ for catering, pop-up questions, sponsorship opportunities, and event inquiries across Cypress and the Houston area.
+      </p>
     </div>
-  </header>
+  </section>
 
-  <main>
+  <section>
+    <div class="container">
+      <div class="contact-grid">
 
-    <!-- Hero -->
-    <section class="section tight">
-      <div class="container">
-        <span class="badge">📞 Contact & Quotes</span>
-        <h1 class="h1">Get a Quote or Book Jesse’s BBQ</h1>
-        <p class="muted">
-          Tell us your date, guest count, and event type — we’ll get back with pricing fast.
-        </p>
+        <div class="card">
+          <h2>Get In Touch</h2>
+
+          <div class="info-item">
+            <strong>Phone</strong>
+            <a href="tel:12817321862">281-732-1862</a>
+          </div>
+
+          <div class="info-item">
+            <strong>Email</strong>
+            <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
+          </div>
+
+          <div class="info-item">
+            <strong>Location</strong>
+            <p>Cypress, Texas</p>
+          </div>
+
+          <div class="info-item">
+            <strong>TikTok</strong>
+            <a href="https://tiktok.com/@jessesbbqcypresstx" target="_blank">@jessesbbqcypresstx</a>
+          </div>
+
+          <a href="tel:12817321862" class="btn btn-primary">Call Jesse’s BBQ</a>
+          <a href="mailto:jessesbbqcypress@gmail.com" class="btn btn-secondary">Send an Email</a>
+        </div>
+
+        <div class="card">
+          <h2>What To Contact Us About</h2>
+          <ul class="topics">
+            <li>Catering quotes and availability</li>
+            <li>Weekend pop-up menu questions</li>
+            <li>Private events and special orders</li>
+            <li>Competition team sponsorships</li>
+            <li>Community events and appearances</li>
+            <li>General BBQ inquiries</li>
+          </ul>
+
+          <p style="margin-top:18px;">
+            When reaching out, include your event date, guest count, and any details that help us understand what you need.
+          </p>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact Options -->
-    <section class="section">
-      <div class="container grid3">
+  <section style="padding-top:0;">
+    <div class="container">
+      <p class="note">
+        Jesse’s BBQ serves Cypress, Houston, and surrounding areas. For catering and larger events, reaching out early is the best way to secure availability.
+      </p>
+    </div>
+  </section>
 
-        <div class="tile">
-          <div class="tile-icon">📞</div>
-          <div class="tile-title">Call or Text</div>
-          <div class="tile-text">
-            Fastest way to book or ask questions.
-          </div>
-          <a class="btn primary" href="tel:+12817321862">(281) 732-1862</a>
-        </div>
-
-        <div class="tile">
-          <div class="tile-icon">💬</div>
-          <div class="tile-title">Text for Quick Pricing</div>
-          <div class="tile-text">
-            Send date + guest count for quick estimate.
-          </div>
-          <a class="btn primary" href="sms:+12817321862">Text Now</a>
-        </div>
-
-        <div class="tile">
-          <div class="tile-icon">📍</div>
-          <div class="tile-title">Service Area</div>
-          <div class="tile-text">
-            Cypress • Houston • Surrounding Areas
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Quote Form -->
-    <section class="section tight" id="quote">
-      <div class="container">
-        <h2 class="h2">Request Catering Quote</h2>
-        <p class="muted">Fill this out and we’ll contact you.</p>
-
-        <!-- FORM -->
-        <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" class="contact-form">
-
-          <!-- replace with your email -->
-          <input type="hidden" name="_captcha" value="false">
-
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-          </div>
-
-          <div class="form-row">
-            <input type="email" name="email" placeholder="Email Address">
-            <input type="date" name="event_date">
-          </div>
-
-          <div class="form-row">
-            <input type="text" name="event_type" placeholder="Event Type (wedding, party, corporate)">
-            <input type="number" name="guests" placeholder="Guest Count">
-          </div>
-
-          <textarea name="details" placeholder="Tell us what you need (meats, sides, location, time)" rows="5"></textarea>
-
-          <button type="submit" class="btn primary">Request Quote</button>
-
-        </form>
-
-        <div class="note">
-          ⚠️ Replace <strong>YOUR_EMAIL_HERE</strong> above with your email to receive quote requests.
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-band">
-      <div class="container cta-inner">
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <h2 class="h2">Let’s Smoke Something Amazing</h2>
-          <p class="muted">Dates fill fast — reserve early.</p>
+          <h3>Jesse’s BBQ</h3>
+          <p>
+            Award-winning BBQ in Cypress, Texas serving catering, pop-up events, and competition-level barbecue.
+          </p>
         </div>
-        <a class="btn primary" href="tel:+12817321862">Call/Text 281-732-1862</a>
-      </div>
-    </section>
 
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>Jesse’s BBQ</strong><br>
-        Cypress, Texas
+        <div>
+          <a href="tel:12817321862">281-732-1862</a>
+          <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
+          <p>Cypress, Texas</p>
+        </div>
       </div>
-      <div>© <span id="year"></span> Jesse’s BBQ</div>
+
+      <div class="copyright">
+        © Jesse’s BBQ. All rights reserved.
+      </div>
     </div>
   </footer>
 
