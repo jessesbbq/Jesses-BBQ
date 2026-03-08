@@ -1,180 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pop-Ups & Events — Jesse’s BBQ | Cypress, Texas</title>
-  <meta name="description" content="Find Jesse’s BBQ pop-ups, cookoffs, and events in Cypress & Houston. Follow the smoke and come hungry. Call/Text 281-732-1862." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop-Ups | Jesse's BBQ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:#0b0b0b;
+color:white;
+font-family:Montserrat, sans-serif;
+}
+
+nav{
+background:#111;
+padding:18px 8%;
+border-bottom:1px solid #222;
+}
+
+.brand{
+font-family:"Bebas Neue";
+font-size:32px;
+color:#ff7a18;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+.nav-links a{
+color:white;
+font-size:14px;
+text-decoration:none;
+font-weight:600;
+}
+
+.header{
+padding:80px 8%;
+text-align:center;
+background:#111;
+border-bottom:1px solid #222;
+}
+
+.header h1{
+font-family:"Bebas Neue";
+font-size:56px;
+margin-bottom:10px;
+}
+
+.header p{
+max-width:750px;
+margin:auto;
+color:#ccc;
+line-height:1.7;
+}
+
+.section{
+padding:70px 8%;
+}
+
+.section h2{
+font-family:"Bebas Neue";
+font-size:42px;
+text-align:center;
+margin-bottom:25px;
+}
+
+.box{
+max-width:900px;
+margin:auto;
+background:#151515;
+border:1px solid #222;
+border-radius:10px;
+padding:28px;
+color:#ccc;
+line-height:1.8;
+}
+
+.box ul{
+padding-left:20px;
+margin:15px 0 0;
+}
+
+.box li{
+margin:10px 0;
+}
+
+.cta{
+padding:70px 8%;
+text-align:center;
+background:#111;
+border-top:1px solid #222;
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:6px;
+background:#ff7a18;
+color:white;
+text-decoration:none;
+font-weight:600;
+margin-top:20px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:#080808;
+border-top:1px solid #222;
+color:#777;
+font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="badge">🔥 Follow the Smoke • Cypress, Texas</span>
-      </div>
-      <div class="topbar-right">
-        <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
-      </div>
-    </div>
-  </div>
+<nav>
+<div class="brand">JESSE'S BBQ</div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo">
-        <div class="brand-text">
-          <div class="brand-name">Jesse’s BBQ</div>
-          <div class="brand-sub">Pop-Ups • Events • Competition BBQ</div>
-        </div>
-      </a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="menu.html">Menu</a>
+<a href="catering.html">Catering</a>
+<a href="popups.html">Pop-Ups</a>
+<a href="competitions.html">Competition Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-      <button class="nav-toggle"><span></span><span></span><span></span></button>
+<section class="header">
+<h1>WEEKEND POP-UPS</h1>
+<p>
+Jesse’s BBQ offers rotating weekend pop-up menus with smoked favorites, seasonal specials, and limited preorder pickup.
+</p>
+</section>
 
-      <nav class="nav">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="menu.html">Menu</a>
-        <a class="nav-link" href="catering.html">Catering</a>
-        <a class="nav-link active" href="events.html">Events</a>
-        <a class="nav-link" href="competition.html">Competition</a>
-        <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link btn small" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<section class="section">
+<h2>HOW POP-UPS WORK</h2>
 
-  <main>
+<div class="box">
+<p>
+Each weekend, Jesse’s BBQ posts a changing menu for Saturday and Sunday pickup. Customers preorder in advance, and menus may vary depending on what is being smoked that week.
+</p>
 
-    <!-- Hero -->
-    <section class="section tight">
-      <div class="container">
-        <span class="badge">🚚 Pop-Ups & Events</span>
-        <h1 class="h1">Where to Find Jesse’s BBQ</h1>
-        <p class="muted">
-          We pop up across Cypress, Houston, and cookoff events.
-          Follow the smoke and come hungry.
-        </p>
-      </div>
-    </section>
+<ul>
+<li>Preorders are required for weekend pop-ups</li>
+<li>Orders must be placed by Thursday at 6:00 PM</li>
+<li>Pickup is available Saturday and Sunday</li>
+<li>Pickup details are shared with each weekly menu</li>
+<li>Payment is completed through SumUp</li>
+</ul>
+</div>
+</section>
 
-    <!-- Upcoming Events -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Upcoming Pop-Ups</h2>
-        <p class="muted">Update this anytime with your next stops.</p>
+<section class="section">
+<h2>WHAT TO EXPECT</h2>
 
-        <div class="menu-grid">
+<div class="box">
+<p>
+Weekend menus may include smoked brisket, ribs, chicken, sandwiches, sides, jalapeño poppers, and other rotating specials. Seasonal items like crawfish may also be available at certain times of the year.
+</p>
+</div>
+</section>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Saturday BBQ Pop-Up</div>
-              <div class="menu-price">11 AM – Sold Out</div>
-            </div>
-            <div class="menu-desc">
-              Cypress area pop-up. Brisket, ribs, sausage & plates.
-            </div>
-          </div>
+<section class="cta">
+<h2>Need this weekend’s menu?</h2>
+<p>Contact Jesse’s BBQ for the latest preorder menu and pickup details.</p>
+<a class="btn" href="contact.html">Contact Jesse's BBQ</a>
+</section>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Friday Night Crowd</div>
-              <div class="menu-price">6 PM – Late</div>
-            </div>
-            <div class="menu-desc">
-              Night crowd special menu — quick hitters & sandwiches.
-            </div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Community Event</div>
-              <div class="menu-price">TBA</div>
-            </div>
-            <div class="menu-desc">
-              Serving plates and sandwiches at a local community event.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Cookoffs -->
-    <section class="section tight">
-      <div class="container split">
-        <div class="panel">
-          <h2 class="h2">Cookoffs & Competitions</h2>
-          <p class="muted">
-            When we’re not serving the public, we’re chasing calls and cooking against the best.
-          </p>
-
-          <ul class="list">
-            <li>IBCA Sanctioned Cookoffs</li>
-            <li>Wild Game Cookoff — Hempstead</li>
-            <li>Regional Texas BBQ competitions</li>
-          </ul>
-
-          <p class="muted">
-            Follow us at events to support the team and taste competition-level BBQ.
-          </p>
-        </div>
-
-        <div class="panel panel-dark">
-          <h3 class="h3">Want us at your event?</h3>
-          <p class="muted">
-            Booking a festival, brewery event, or large gathering?
-            Jesse’s BBQ can serve on-site.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="contact.html#quote">Book an Event</a>
-            <a class="btn" href="tel:+12817321862">Call/Text</a>
-          </div>
-
-          <div class="note">
-            Events fill fast — contact us early for best availability.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2 class="h2">Follow the Smoke</h2>
-          <p class="muted">Find us, line up early, and eat like a champion.</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn primary" href="contact.html">Contact Us</a>
-          <a class="btn" href="tel:+12817321862">Call/Text 281-732-1862</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>Jesse’s BBQ</strong><br>
-        Cypress, Texas
-      </div>
-      <div>
-        <a href="index.html">Home</a> |
-        <a href="menu.html">Menu</a> |
-        <a href="catering.html">Catering</a> |
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>© <span id="year"></span> Jesse’s BBQ</div>
-    </div>
-  </footer>
+<footer>
+© Jesse's BBQ • Cypress Texas
+</footer>
 
 </body>
 </html>
