@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jesse's BBQ | Cypress Texas</title>
+<title>Jesse's BBQ | Cypress Texas BBQ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -12,10 +13,12 @@
 
 body{
 margin:0;
+font-family:Montserrat, sans-serif;
 background:#0e0e0e;
 color:white;
-font-family:Montserrat;
 }
+
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -28,8 +31,8 @@ border-bottom:1px solid #222;
 
 nav h1{
 font-family:"Bebas Neue";
+font-size:34px;
 letter-spacing:2px;
-font-size:32px;
 margin:0;
 color:#ff7a18;
 }
@@ -39,32 +42,37 @@ color:white;
 text-decoration:none;
 margin-left:25px;
 font-size:14px;
+font-weight:600;
 }
+
+/* HERO */
 
 .hero{
-height:85vh;
-background:url("images/banner.jpg") center/cover no-repeat;
+height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+url("images:banner.jpg");
+background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
 }
 
-.hero-overlay{
-background:rgba(0,0,0,.6);
-padding:40px;
+.hero-content{
+max-width:650px;
+padding-left:8%;
 }
 
 .hero h2{
 font-family:"Bebas Neue";
 font-size:70px;
+margin-bottom:15px;
 letter-spacing:2px;
-margin:0;
 }
 
 .hero p{
 font-size:18px;
-margin-top:10px;
+line-height:1.6;
 color:#ddd;
 }
 
@@ -73,85 +81,124 @@ margin-top:25px;
 }
 
 .btn{
-padding:14px 30px;
-margin:10px;
-background:#ff7a18;
-border:none;
-color:white;
+padding:14px 25px;
+border-radius:6px;
 font-weight:600;
-cursor:pointer;
 text-decoration:none;
-display:inline-block;
+margin-right:15px;
 }
 
-.btn:hover{
-background:#e46c14;
+.btn-primary{
+background:#ff7a18;
+color:white;
 }
 
-.section{
-padding:80px 8%;
+.btn-secondary{
+border:1px solid white;
+color:white;
+}
+
+/* LOGO SECTION */
+
+.logo-section{
 text-align:center;
-}
-
-.section h2{
-font-family:"Bebas Neue";
-font-size:42px;
-letter-spacing:2px;
-margin-bottom:20px;
+padding:80px 10%;
+background:#111;
 }
 
 .logo-section img{
-width:350px;
-max-width:90%;
+max-width:400px;
 margin-bottom:30px;
 }
 
-.features{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px;
-margin-top:40px;
-}
-
-.feature{
-width:250px;
-}
-
-.feature h3{
+.logo-section h2{
 font-family:"Bebas Neue";
-letter-spacing:1px;
-font-size:28px;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.logo-section p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+color:#ddd;
+}
+
+/* SERVICES */
+
+.services{
+padding:90px 10%;
+background:#0e0e0e;
+}
+
+.services h2{
+text-align:center;
+font-family:"Bebas Neue";
+font-size:50px;
+margin-bottom:50px;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.service-card{
+background:#151515;
+padding:35px;
+border-radius:8px;
+border:1px solid #222;
+}
+
+.service-card h3{
+font-family:"Bebas Neue";
+font-size:30px;
+margin-bottom:10px;
 color:#ff7a18;
 }
 
-.feature p{
+.service-card p{
 color:#ccc;
-font-size:14px;
+line-height:1.6;
 }
 
+/* CTA */
+
 .cta{
-background:#ff7a18;
-padding:70px 8%;
+padding:80px 10%;
+background:#111;
 text-align:center;
 }
 
 .cta h2{
 font-family:"Bebas Neue";
-font-size:46px;
+font-size:50px;
 margin-bottom:20px;
 }
 
+.cta p{
+font-size:18px;
+color:#ccc;
+margin-bottom:25px;
+}
+
+/* FOOTER */
+
 footer{
-background:#111;
-padding:40px;
+background:#0a0a0a;
+padding:40px 10%;
 text-align:center;
+border-top:1px solid #222;
+}
+
+footer p{
+color:#888;
 font-size:14px;
-color:#aaa;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -161,30 +208,34 @@ color:#aaa;
 <h1>Jesse's BBQ</h1>
 
 <div>
-<a href="about.html">About</a>
+
+<a href="index.html">Home</a>
 <a href="menu.html">Menu</a>
 <a href="catering.html">Catering</a>
-<a href="popups.html">Pop Ups</a>
-<a href="competitions.html">Competitions</a>
+<a href="popups.html">Pop-Ups</a>
+<a href="competitions.html">Competition Team</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
+
 </div>
 
 </nav>
 
 <section class="hero">
 
-<div class="hero-overlay">
+<div class="hero-content">
 
-<h2>REAL WOOD. SLOW SMOKE.</h2>
+<h2>Real Wood. Slow Smoke. Texas Flavor.</h2>
 
-<p>Award Winning BBQ in Cypress Texas</p>
+<p>
+Jesse’s BBQ brings award-winning barbecue to Cypress, Houston, and surrounding areas with catering services, pop-up events, and competition-level barbecue rooted in true Texas tradition.
+</p>
 
 <div class="hero-buttons">
 
-<a class="btn" href="popups.html">Weekend Preorders</a>
+<a class="btn btn-primary" href="catering.html">Book Catering</a>
 
-<a class="btn" href="catering.html">Book Catering</a>
+<a class="btn btn-secondary" href="contact.html">Call/Text 281-732-1862</a>
 
 </div>
 
@@ -192,60 +243,52 @@ color:#aaa;
 
 </section>
 
-<section class="section logo-section">
+<section class="logo-section">
 
-<img src="images/logo.jpg">
+<img src="images:logo.JPG" alt="Jesse's BBQ Logo">
 
-<h2>Award Winning BBQ</h2>
+<h2>AWARD-WINNING BBQ</h2>
 
 <p>
 
-Jesse’s BBQ started as a small BBQ cookoff team over 10 years ago and has grown into a catering and pop-up BBQ business serving Cypress and the Houston area.
-
-From smoked brisket and ribs to crawfish during the season, everything is cooked with real wood fire and Texas tradition.
+Jesse’s BBQ is a Cypress, Texas based BBQ business known for award-winning barbecue, catering, and pop-up events throughout the Houston area. From smoked brisket and ribs to seasonal crawfish boils, everything is prepared with real wood fire, traditional techniques, and the bold flavors Texas barbecue is known for.
 
 </p>
 
 </section>
 
-<section class="section">
+<section class="services">
 
-<h2>What Jesse's BBQ Offers</h2>
+<h2>WHAT JESSE'S BBQ OFFERS</h2>
 
-<div class="features">
+<div class="service-grid">
 
-<div class="feature">
+<div class="service-card">
 
 <h3>Catering</h3>
 
 <p>
-
-Perfect for family events, parties, business gatherings and celebrations.
-
+From backyard parties to weddings and corporate lunches, Jesse’s BBQ provides full catering services featuring authentic Texas barbecue and classic sides.
 </p>
 
 </div>
 
-<div class="feature">
+<div class="service-card">
 
-<h3>Weekend Pop Ups</h3>
+<h3>Weekend Pop-Ups</h3>
 
 <p>
-
-Preorder BBQ every weekend. Menu changes weekly depending on what's cooking.
-
+Weekly pop-up events offer rotating BBQ menus with customer favorites and seasonal specials available for pickup.
 </p>
 
 </div>
 
-<div class="feature">
+<div class="service-card">
 
 <h3>Competition BBQ</h3>
 
 <p>
-
-Award winning competition team bringing championship flavor to every order.
-
+Jesse’s BBQ proudly competes in Texas BBQ competitions, bringing award-winning techniques and pitmaster expertise to every meal served.
 </p>
 
 </div>
@@ -256,20 +299,19 @@ Award winning competition team bringing championship flavor to every order.
 
 <section class="cta">
 
-<h2>Need BBQ For An Event?</h2>
+<h2>Need BBQ for an event?</h2>
 
-<a class="btn" href="contact.html">Request Catering</a>
+<p>
+Contact Jesse’s BBQ for catering, pop-ups, and event services across Cypress and the Houston area.
+</p>
+
+<a class="btn btn-primary" href="contact.html">Get a Quote</a>
 
 </section>
 
 <footer>
 
-Jesse's BBQ • Cypress Texas  
-Award Winning BBQ  
-
-<br><br>
-
-281-732-1862
+<p>© 2026 Jesse's BBQ • Cypress Texas</p>
 
 </footer>
 
