@@ -1,274 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Catering — Jesse’s BBQ | Cypress, Texas</title>
-  <meta name="description" content="Jesse’s BBQ catering in Cypress, TX — drop-off or full-service BBQ for weddings, corporate, birthdays, and events. Call/Text 281-732-1862." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering | Jesse's BBQ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+background:#0b0b0b;
+color:white;
+font-family:Montserrat, sans-serif;
+}
+
+nav{
+background:#111;
+padding:18px 8%;
+border-bottom:1px solid #222;
+}
+
+.brand{
+font-family:"Bebas Neue";
+font-size:32px;
+color:#ff7a18;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+.nav-links a{
+color:white;
+font-size:14px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HEADER */
+
+.header{
+padding:80px 8%;
+text-align:center;
+background:#111;
+border-bottom:1px solid #222;
+}
+
+.header h1{
+font-family:"Bebas Neue";
+font-size:56px;
+margin-bottom:10px;
+}
+
+.header p{
+max-width:700px;
+margin:auto;
+color:#ccc;
+line-height:1.7;
+}
+
+/* CONTENT */
+
+.section{
+padding:70px 8%;
+}
+
+.section h2{
+font-family:"Bebas Neue";
+font-size:42px;
+text-align:center;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#151515;
+border:1px solid #222;
+border-radius:10px;
+padding:25px;
+}
+
+.card h3{
+font-family:"Bebas Neue";
+font-size:30px;
+color:#ff7a18;
+margin-bottom:10px;
+}
+
+.card p{
+color:#ccc;
+line-height:1.7;
+}
+
+/* CTA */
+
+.cta{
+padding:70px 8%;
+text-align:center;
+background:#111;
+border-top:1px solid #222;
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:6px;
+background:#ff7a18;
+color:white;
+text-decoration:none;
+font-weight:600;
+margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+background:#080808;
+border-top:1px solid #222;
+color:#777;
+font-size:14px;
+}
+
+</style>
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="badge">🔥 Award-Winning BBQ • Cypress, Texas</span>
-      </div>
-      <div class="topbar-right">
-        <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
-        <span class="dot">•</span>
-        <a class="toplink" href="contact.html#quote">Get a Quote</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Header / Nav -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Jesse’s BBQ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo" />
-        <div class="brand-text">
-          <div class="brand-name">Jesse’s BBQ</div>
-          <div class="brand-sub">Catering • Pop-Ups • Events • Competition Team</div>
-        </div>
-      </a>
+<nav>
 
-      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<div class="brand">JESSE'S BBQ</div>
 
-      <nav class="nav" role="navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="menu.html">Menu</a>
-        <a class="nav-link active" href="catering.html">Catering</a>
-        <a class="nav-link" href="events.html">Pop-Ups & Events</a>
-        <a class="nav-link" href="competition.html">Competition Team</a>
-        <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link btn small" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<div class="nav-links">
 
-  <main>
-    <!-- Page Hero -->
-    <section class="section tight">
-      <div class="container">
-        <div class="page-hero">
-          <div>
-            <span class="badge">🍽️ Catering</span>
-            <h1 class="h1">BBQ Catering That Feeds a Crowd</h1>
-            <p class="muted">
-              From backyard parties to weddings and corporate lunches — Jesse’s BBQ brings
-              award-winning smoke to your event in Cypress, Houston, and surrounding areas.
-            </p>
-          </div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="menu.html">Menu</a>
+<a href="catering.html">Catering</a>
+<a href="popups.html">Pop-Ups</a>
+<a href="competitions.html">Competition Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 
-          <div class="page-hero-actions">
-            <a class="btn primary" href="contact.html#quote">Request a Quote</a>
-            <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-          </div>
-        </div>
+</div>
 
-        <div class="notice">
-          <strong>Booking tip:</strong> Weekend dates fill up fast during cookoff season.
-          Lock your date early.
-        </div>
-      </div>
-    </section>
+</nav>
 
-    <!-- Catering Options -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Catering Options</h2>
-        <p class="muted">Pick what fits your event — we’ll handle the rest.</p>
 
-        <div class="grid3">
-          <div class="tile">
-            <div class="tile-top">
-              <div class="tile-icon">📦</div>
-              <div class="tile-title">Drop-Off Catering</div>
-            </div>
-            <div class="tile-text">
-              We deliver hot BBQ in pans with serving utensils. Perfect for offices, birthdays, and family events.
-            </div>
-            <div class="tile-link">Fast + easy</div>
-          </div>
+<section class="header">
 
-          <div class="tile">
-            <div class="tile-top">
-              <div class="tile-icon">🍽️</div>
-              <div class="tile-title">Full-Service</div>
-            </div>
-            <div class="tile-text">
-              We set up, serve, and keep the line moving. Great for weddings, large parties, and public events.
-            </div>
-            <div class="tile-link">Stress-free</div>
-          </div>
+<h1>CATERING</h1>
 
-          <div class="tile">
-            <div class="tile-top">
-              <div class="tile-icon">🔥</div>
-              <div class="tile-title">On-Site Pop-Up Style</div>
-            </div>
-            <div class="tile-text">
-              Want that true pit experience? We can set up on-site depending on venue and logistics.
-            </div>
-            <div class="tile-link">Ask availability</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<p>
 
-    <!-- Packages -->
-    <section class="section tight">
-      <div class="container split">
-        <div class="panel">
-          <h2 class="h2">Popular Packages</h2>
-          <p class="muted">These are starter templates — we can customize meats, sides, and portions.</p>
+Jesse’s BBQ offers full-service Texas barbecue catering for events across Cypress, Houston, and surrounding areas.
 
-          <div class="price-list">
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">The Classic</div>
-                <div class="price-sub">1 meat • 2 sides • bread • sauce & fixins</div>
-              </div>
-              <div class="price-right">Quote</div>
-            </div>
+</p>
 
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">The Texas Combo</div>
-                <div class="price-sub">2 meats • 2 sides • bread • sauce & fixins</div>
-              </div>
-              <div class="price-right">Quote</div>
-            </div>
+</section>
 
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">The Pitmaster</div>
-                <div class="price-sub">3 meats • 2 sides • bread • sauce & fixins</div>
-              </div>
-              <div class="price-right">Quote</div>
-            </div>
 
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">The Family / Small Party Pack</div>
-                <div class="price-sub">Feeds 10–20 (meat + sides)</div>
-              </div>
-              <div class="price-right">Quote</div>
-            </div>
-          </div>
+<section class="section">
 
-          <div class="cta-row">
-            <a class="btn primary" href="contact.html#quote">Get My Quote</a>
-            <a class="btn" href="menu.html">See Menu</a>
-          </div>
+<h2>CATERING OPTIONS</h2>
 
-          <p class="muted" style="margin-top:14px">
-            *Pricing depends on guest count, menu, delivery distance, and service level.
-          </p>
-        </div>
+<div class="grid">
 
-        <div class="panel panel-dark">
-          <h3 class="h3">What’s Included</h3>
-          <p class="muted">We keep it clean, simple, and professional.</p>
+<div class="card">
+<h3>Drop-Off Catering</h3>
 
-          <ul class="list">
-            <li><strong>Meats:</strong> brisket, ribs, sausage, chicken (menu varies)</li>
-            <li><strong>Sides:</strong> beans, potato salad, slaw, mac & cheese (availability varies)</li>
-            <li><strong>Fixins:</strong> pickles, onions, jalapeños</li>
-            <li><strong>Sauce:</strong> mild / spicy (as available)</li>
-            <li><strong>Setup:</strong> serving pans + utensils (drop-off)</li>
-          </ul>
+<p>
+Perfect for offices, family gatherings, and small events. Jesse’s BBQ delivers hot, freshly smoked barbecue ready to serve.
+</p>
 
-          <div class="note">
-            Tell us your guest count, date/time, and location — we’ll recommend the best package.
-          </div>
+</div>
 
-          <div class="quick">
-            <div class="quick-item">
-              <div class="quick-k">Text</div>
-              <div class="quick-v"><a href="sms:+12817321862">281-732-1862</a></div>
-            </div>
-            <div class="quick-item">
-              <div class="quick-k">Call</div>
-              <div class="quick-v"><a href="tel:+12817321862">(281) 732-1862</a></div>
-            </div>
-            <div class="quick-item">
-              <div class="quick-k">Quote Form</div>
-              <div class="quick-v"><a href="contact.html#quote">Open form →</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Events Types -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Great For</h2>
-        <p class="muted">If you’ve got people to feed, we’ve got you.</p>
+<div class="card">
+<h3>Full Service Catering</h3>
 
-        <div class="grid3">
-          <div class="quote">
-            <p><strong>Weddings & Rehearsal Dinners</strong><br>Easy service, big portions, unforgettable flavor.</p>
-            <div class="who">— Popular request</div>
-          </div>
-          <div class="quote">
-            <p><strong>Corporate Lunches</strong><br>Drop-off trays or full-service for large teams.</p>
-            <div class="who">— Office favorite</div>
-          </div>
-          <div class="quote">
-            <p><strong>Birthdays • Graduations • Fundraisers</strong><br>Simple packages that scale up fast.</p>
-            <div class="who">— Crowd-ready</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<p>
+For weddings, parties, and large events. Our team handles setup, serving, and cleanup so you can enjoy your event.
+</p>
 
-    <!-- CTA Band -->
-    <section class="section cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2 class="h2">Ready to book Jesse’s BBQ?</h2>
-          <p class="muted">Tell us your date + guest count and we’ll send pricing.</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn primary" href="contact.html#quote">Request a Quote</a>
-          <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-        </div>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">Jesse’s BBQ</div>
-        <div class="footer-sub">Cypress, Texas • Award-Winning BBQ</div>
-      </div>
 
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="catering.html">Catering</a>
-        <a href="events.html">Pop-Ups & Events</a>
-        <a href="competition.html">Competition Team</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </div>
+<div class="card">
+<h3>Custom Event Catering</h3>
 
-      <div class="footer-right">
-        <a class="btn small" href="tel:+12817321862">📞 (281) 732-1862</a>
-        <div class="copyright">
-          © <span id="year"></span> Jesse’s BBQ. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
+<p>
+Need a custom menu or large event setup? Jesse’s BBQ can work with you to create the perfect BBQ experience for your guests.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>Book Jesse's BBQ for your event</h2>
+
+<p>Contact us today to discuss catering availability and menu options.</p>
+
+<a class="btn" href="contact.html">Request a Catering Quote</a>
+
+</section>
+
+
+<footer>
+
+© Jesse's BBQ • Cypress Texas
+
+</footer>
+
 </body>
 </html>
