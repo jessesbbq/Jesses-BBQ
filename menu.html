@@ -1,329 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Menu — Jesse’s BBQ | Cypress, Texas</title>
-  <meta name="description" content="Jesse’s BBQ menu preview — brisket, ribs, sausage, chicken, sides. Catering, pop-ups, events. Call/Text 281-732-1862." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu | Jesse's BBQ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:#0b0b0b;
+color:white;
+font-family:Montserrat, sans-serif;
+}
+
+nav{
+background:#111;
+padding:18px 8%;
+border-bottom:1px solid #222;
+}
+
+.brand{
+font-family:"Bebas Neue";
+font-size:32px;
+color:#ff7a18;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+.nav-links a{
+color:white;
+font-size:14px;
+text-decoration:none;
+font-weight:600;
+}
+
+.header{
+padding:80px 8%;
+text-align:center;
+background:#111;
+border-bottom:1px solid #222;
+}
+
+.header h1{
+font-family:"Bebas Neue";
+font-size:56px;
+margin-bottom:10px;
+}
+
+.header p{
+max-width:700px;
+margin:auto;
+color:#ccc;
+line-height:1.7;
+}
+
+.section{
+padding:70px 8%;
+}
+
+.section h2{
+font-family:"Bebas Neue";
+font-size:40px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#151515;
+border:1px solid #222;
+border-radius:10px;
+padding:25px;
+}
+
+.card h3{
+font-family:"Bebas Neue";
+font-size:30px;
+margin:0 0 15px;
+color:#ff7a18;
+}
+
+.card ul{
+margin:0;
+padding-left:20px;
+color:#ccc;
+line-height:1.9;
+}
+
+.note{
+max-width:800px;
+margin:40px auto 0;
+text-align:center;
+color:#aaa;
+font-size:15px;
+line-height:1.7;
+}
+
+.cta{
+padding:70px 8%;
+text-align:center;
+background:#111;
+border-top:1px solid #222;
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+border-radius:6px;
+background:#ff7a18;
+color:white;
+text-decoration:none;
+font-weight:600;
+margin-top:20px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:#080808;
+border-top:1px solid #222;
+color:#777;
+font-size:14px;
+}
+</style>
 </head>
 
 <body>
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="badge">🔥 Award-Winning BBQ • Cypress, Texas</span>
-      </div>
-      <div class="topbar-right">
-        <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
-        <span class="dot">•</span>
-        <a class="toplink" href="contact.html#quote">Get a Quote</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Header / Nav -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Jesse’s BBQ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo" />
-        <div class="brand-text">
-          <div class="brand-name">Jesse’s BBQ</div>
-          <div class="brand-sub">Catering • Pop-Ups • Events • Competition Team</div>
-        </div>
-      </a>
+<nav>
+<div class="brand">JESSE'S BBQ</div>
 
-      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="menu.html">Menu</a>
+<a href="catering.html">Catering</a>
+<a href="popups.html">Pop-Ups</a>
+<a href="competitions.html">Competition Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-      <nav class="nav" role="navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link active" href="menu.html">Menu</a>
-        <a class="nav-link" href="catering.html">Catering</a>
-        <a class="nav-link" href="events.html">Pop-Ups & Events</a>
-        <a class="nav-link" href="competition.html">Competition Team</a>
-        <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link btn small" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<section class="header">
+<h1>MENU</h1>
+<p>
+Jesse’s BBQ offers authentic Texas barbecue favorites for catering, pop-up events, and special orders throughout Cypress and the Houston area.
+</p>
+</section>
 
-  <main>
-    <!-- Page Hero -->
-    <section class="section tight">
-      <div class="container">
-        <div class="page-hero">
-          <div>
-            <span class="badge">🍖 Menu Preview</span>
-            <h1 class="h1">Jesse’s BBQ Menu</h1>
-            <p class="muted">
-              Our pop-up menu can change based on the event. This page is a strong baseline of what we serve.
-              For catering, we customize packages to your guest count and budget.
-            </p>
-          </div>
+<section class="section">
+<h2>MENU FAVORITES</h2>
 
-          <div class="page-hero-actions">
-            <a class="btn primary" href="contact.html#quote">Request Catering Quote</a>
-            <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-          </div>
-        </div>
+<div class="grid">
 
-        <div class="notice">
-          <strong>Heads up:</strong> Availability varies by cook and event. Want a guaranteed menu?
-          Book catering and we’ll lock it in.
-        </div>
-      </div>
-    </section>
+<div class="card">
+<h3>Smoked Meats</h3>
+<ul>
+<li>Brisket</li>
+<li>Ribs</li>
+<li>Smoked Chicken</li>
+<li>Other BBQ favorites</li>
+</ul>
+</div>
 
-    <!-- Meats -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Meats</h2>
-        <p class="muted">Prices shown are placeholders — update anytime.</p>
+<div class="card">
+<h3>Sandwiches & Specialties</h3>
+<ul>
+<li>BBQ sandwiches</li>
+<li>Jalapeño poppers</li>
+<li>Shrimp poppers</li>
+<li>Brisket poppers</li>
+</ul>
+</div>
 
-        <div class="menu-grid">
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Brisket</div>
-              <div class="menu-price">$— / lb</div>
-            </div>
-            <div class="menu-desc">Sliced or chopped. Competition-style bark and smoke.</div>
-            <div class="menu-tags">
-              <span class="tag">Most Popular</span>
-              <span class="tag">Catering Favorite</span>
-            </div>
-          </div>
+<div class="card">
+<h3>Sides</h3>
+<ul>
+<li>Mac and cheese</li>
+<li>Green beans</li>
+<li>Baked beans</li>
+<li>Salads</li>
+</ul>
+</div>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Pork Ribs</div>
-              <div class="menu-price">$— / rack</div>
-            </div>
-            <div class="menu-desc">Tender with bite-through finish. Built for the judge table.</div>
-            <div class="menu-tags">
-              <span class="tag">Competition</span>
-              <span class="tag">Crowd Pleaser</span>
-            </div>
-          </div>
+<div class="card">
+<h3>Seasonal & Event Specials</h3>
+<ul>
+<li>Crawfish during season</li>
+<li>Weekend pop-up specials</li>
+<li>Custom event menu options</li>
+<li>Rotating menu items</li>
+</ul>
+</div>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Sausage</div>
-              <div class="menu-price">$— / link</div>
-            </div>
-            <div class="menu-desc">Texas snap with smoky flavor. Great add-on for plates.</div>
-            <div class="menu-tags">
-              <span class="tag">Classic Texas</span>
-            </div>
-          </div>
+</div>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Chicken</div>
-              <div class="menu-price">$— / piece</div>
-            </div>
-            <div class="menu-desc">Juicy, seasoned right, and kissed with smoke.</div>
-            <div class="menu-tags">
-              <span class="tag">Family Favorite</span>
-            </div>
-          </div>
+<p class="note">
+Menu items may vary by event, catering order, and weekend pop-up. Contact Jesse’s BBQ for current offerings, special requests, and catering menu details.
+</p>
+</section>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Chopped Beef Sandwich</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Chopped beef piled high on a bun. Add pickles & onions.</div>
-            <div class="menu-tags">
-              <span class="tag">Pop-Up Staple</span>
-            </div>
-          </div>
+<section class="cta">
+<h2>Need a custom menu?</h2>
+<p>Contact Jesse’s BBQ for catering, event menus, and special requests.</p>
+<a class="btn" href="contact.html">Contact Jesse's BBQ</a>
+</section>
 
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Sausage Wrap / Sandwich</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Quick hitter that sells fast at events. Great with sauce.</div>
-            <div class="menu-tags">
-              <span class="tag">Fast Seller</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<footer>
+©Jesse's BBQ • Cypress Texas
+</footer>
 
-    <!-- Plates -->
-    <section class="section tight">
-      <div class="container split">
-        <div class="panel">
-          <h2 class="h2">Plates</h2>
-          <p class="muted">A simple structure that works for pop-ups and catering.</p>
-
-          <div class="price-list">
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">1 Meat Plate</div>
-                <div class="price-sub">1 meat + 2 sides + bread</div>
-              </div>
-              <div class="price-right">$—</div>
-            </div>
-
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">2 Meat Plate</div>
-                <div class="price-sub">2 meats + 2 sides + bread</div>
-              </div>
-              <div class="price-right">$—</div>
-            </div>
-
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">3 Meat Plate</div>
-                <div class="price-sub">3 meats + 2 sides + bread</div>
-              </div>
-              <div class="price-right">$—</div>
-            </div>
-
-            <div class="price-row">
-              <div class="price-left">
-                <div class="price-title">Family Pack</div>
-                <div class="price-sub">Feeds 4–6 (meat + sides)</div>
-              </div>
-              <div class="price-right">$—</div>
-            </div>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn primary" href="contact.html#quote">Get Catering Pricing</a>
-            <a class="btn" href="events.html">See Pop-Ups</a>
-          </div>
-        </div>
-
-        <div class="panel panel-dark">
-          <h3 class="h3">Sauce & Extras</h3>
-          <p class="muted">Keep it simple. Add-ons boost profit and make plates feel premium.</p>
-
-          <ul class="list">
-            <li><strong>BBQ sauce</strong> — mild / spicy (as available)</li>
-            <li><strong>Pickles, onions, jalapeños</strong></li>
-            <li><strong>Extra bread</strong></li>
-            <li><strong>Premium add-on:</strong> extra meat</li>
-          </ul>
-
-          <div class="note">
-            Want a custom menu for your event? We’ll tailor it to your crowd and budget.
-          </div>
-
-          <div class="cta-row">
-            <a class="btn small primary" href="contact.html#quote">Request a Quote</a>
-            <a class="btn small" href="tel:+12817321862">Call/Text</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sides -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Sides</h2>
-        <p class="muted">Pick 2 with plates (or build a custom catering spread).</p>
-
-        <div class="menu-grid">
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">BBQ Beans</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Smoky, hearty, and perfect with brisket.</div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Potato Salad</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Classic and creamy — a Texas BBQ staple.</div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Cole Slaw</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Fresh crunch to balance the smoke.</div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Mac & Cheese</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Rich, cheesy comfort side (as available).</div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Chips</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Easy grab-and-go side for pop-ups.</div>
-          </div>
-
-          <div class="menu-card">
-            <div class="menu-top">
-              <div class="menu-name">Daily Special Side</div>
-              <div class="menu-price">$—</div>
-            </div>
-            <div class="menu-desc">Rotating side depending on cook and event.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="section cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2 class="h2">Want this menu at your event?</h2>
-          <p class="muted">We’ll size the meat and sides to your guest count and budget.</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn primary" href="contact.html#quote">Request a Quote</a>
-          <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">Jesse’s BBQ</div>
-        <div class="footer-sub">Cypress, Texas • Award-Winning BBQ</div>
-      </div>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="catering.html">Catering</a>
-        <a href="events.html">Pop-Ups & Events</a>
-        <a href="competition.html">Competition Team</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-right">
-        <a class="btn small" href="tel:+12817321862">📞 (281) 732-1862</a>
-        <div class="copyright">
-          © <span id="year"></span> Jesse’s BBQ. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
