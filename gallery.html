@@ -1,206 +1,475 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery — Jesse’s BBQ | Cypress, Texas</title>
-  <meta name="description" content="See Jesse’s BBQ photos — brisket, ribs, catering setups, pop-ups and events. Call/Text 281-732-1862." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Jesse's BBQ</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#090909;
+      --bg-soft:#121212;
+      --card:#181818;
+      --border:#2a2a2a;
+      --text:#f7f2eb;
+      --muted:#d9cbbc;
+      --accent:#e56a1c;
+      --accent-dark:#b64a08;
+      --accent-light:#ffb36f;
+      --white:#ffffff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Montserrat", sans-serif;
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1200px, 92%);
+      margin:auto;
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(9,9,9,.96);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+    }
+
+    .nav-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:12px;
+      padding:16px 0;
+    }
+
+    .brand{
+      font-family:"Bebas Neue", sans-serif;
+      font-size:34px;
+      letter-spacing:2px;
+      color:var(--accent);
+      line-height:1;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      width:100%;
+    }
+
+    .nav-links a{
+      color:var(--white);
+      font-size:14px;
+      font-weight:600;
+      opacity:.95;
+    }
+
+    .header{
+      padding:72px 0 28px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:#0b0b0b;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      color:var(--accent-light);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .header h1{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:56px;
+      letter-spacing:2px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .header p{
+      max-width:760px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .gallery-section{
+      padding:60px 0 70px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+    }
+
+    .photo-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      cursor:pointer;
+      transition:.2s ease;
+      min-height:220px;
+    }
+
+    .photo-card:hover{
+      transform:translateY(-2px);
+    }
+
+    .photo-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      aspect-ratio:1/1;
+    }
+
+    .cta{
+      padding:65px 0;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:#101010;
+    }
+
+    .section-title{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:42px;
+      letter-spacing:1px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .section-sub{
+      max-width:760px;
+      margin:0 auto 24px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.2s ease;
+      text-align:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    footer{
+      background:#070707;
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:40px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    footer h3{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:30px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    footer p,
+    footer a{
+      margin:8px 0;
+      color:var(--muted);
+      display:block;
+    }
+
+    .copyright{
+      text-align:center;
+      color:#9d8c7a;
+      font-size:14px;
+      margin-top:22px;
+    }
+
+    .lightbox{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.92);
+      z-index:9999;
+      padding:20px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox.active{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:100%;
+      max-height:88vh;
+      border-radius:12px;
+      object-fit:contain;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      width:42px;
+      height:42px;
+      border:none;
+      border-radius:50%;
+      background:#111;
+      color:#fff;
+      font-size:24px;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    @media (max-width: 900px){
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .header h1{
+        font-size:46px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .brand{
+        font-size:30px;
+      }
+
+      .nav-links{
+        gap:10px 14px;
+      }
+
+      .nav-links a{
+        font-size:13px;
+      }
+
+      .header{
+        padding:58px 0 24px;
+      }
+
+      .header h1{
+        font-size:40px;
+      }
+
+      .header p,
+      .section-sub{
+        font-size:17px;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      .gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+      }
+
+      .photo-card{
+        min-height:160px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-left">
-        <span class="badge">📸 Real Smoke. Real BBQ.</span>
-      </div>
-      <div class="topbar-right">
-        <a class="toplink" href="tel:+12817321862">Call/Text: (281) 732-1862</a>
-        <span class="dot">•</span>
-        <a class="toplink" href="contact.html#quote">Get a Quote</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Header / Nav -->
-  <header class="header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Jesse’s BBQ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Jesse’s BBQ logo" />
-        <div class="brand-text">
-          <div class="brand-name">Jesse’s BBQ</div>
-          <div class="brand-sub">Catering • Pop-Ups • Events • Competition Team</div>
-        </div>
-      </a>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand">JESSE'S BBQ</div>
 
-      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav" role="navigation">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="menu.html">Menu</a>
-        <a class="nav-link" href="catering.html">Catering</a>
-        <a class="nav-link" href="events.html">Pop-Ups & Events</a>
-        <a class="nav-link" href="competition.html">Competition Team</a>
-        <a class="nav-link active" href="gallery.html">Gallery</a>
-        <a class="nav-link btn small" href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Page Hero -->
-    <section class="section tight">
-      <div class="container">
-        <div class="page-hero">
-          <div>
-            <span class="badge">📸 Gallery</span>
-            <h1 class="h1">Food, Fire & Events</h1>
-            <p class="muted">
-              Real photos from catering, pop-ups, and the cookoff life. (Add your best brisket slices and action shots!)
-            </p>
-          </div>
-
-          <div class="page-hero-actions">
-            <a class="btn primary" href="contact.html#quote">Book Catering</a>
-            <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-          </div>
-        </div>
-
-        <div class="notice">
-          <strong>Pro tip:</strong> Add 12–24 photos for the best look — brisket slice, rib pull, sausage cut,
-          plates, line at pop-up, trailer/truck, and team at cookoffs.
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Grid -->
-    <section class="section">
-      <div class="container">
-        <h2 class="h2">Photos</h2>
-        <p class="muted">
-          Replace the image filenames below with your actual photo names in <strong>/assets/gallery/</strong>.
-        </p>
-
-        <!--
-          HOW TO USE:
-          1) Create folder: /assets/gallery/
-          2) Put your photos there (jpg/png/webp)
-          3) Rename files to match below OR edit the src values
-        -->
-
-        <div class="gallery-grid">
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo1.jpg" alt="Jesse’s BBQ brisket slices" loading="lazy">
-            <figcaption>Brisket</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo2.jpg" alt="Jesse’s BBQ ribs" loading="lazy">
-            <figcaption>Ribs</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo3.jpg" alt="Jesse’s BBQ sausage" loading="lazy">
-            <figcaption>Sausage</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo4.jpg" alt="BBQ plate with sides" loading="lazy">
-            <figcaption>Plates</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo5.jpg" alt="Catering setup" loading="lazy">
-            <figcaption>Catering</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo6.jpg" alt="Jesse’s BBQ pop-up event" loading="lazy">
-            <figcaption>Pop-Ups</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo7.jpg" alt="Competition cookoff team" loading="lazy">
-            <figcaption>Cookoffs</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo8.jpg" alt="Smoker and fire" loading="lazy">
-            <figcaption>Smoke & Fire</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo9.jpg" alt="Food close-up" loading="lazy">
-            <figcaption>Close-Ups</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo10.jpg" alt="Serving line" loading="lazy">
-            <figcaption>Serving</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo11.jpg" alt="Trailer or truck photo" loading="lazy">
-            <figcaption>Truck/Trailer</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="assets/gallery/photo12.jpg" alt="Team photo" loading="lazy">
-            <figcaption>Team</figcaption>
-          </figure>
-        </div>
-
-        <div class="cta-row" style="margin-top:18px;">
-          <a class="btn primary" href="contact.html#quote">Request a Quote</a>
-          <a class="btn" href="menu.html">View Menu</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="section cta-band">
-      <div class="container cta-inner">
-        <div>
-          <h2 class="h2">Want this BBQ at your event?</h2>
-          <p class="muted">Tell us your date + guest count and we’ll send pricing.</p>
-        </div>
-        <div class="cta-row">
-          <a class="btn primary" href="contact.html#quote">Book Catering</a>
-          <a class="btn" href="tel:+12817321862">Call/Text (281) 732-1862</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-brand">Jesse’s BBQ</div>
-        <div class="footer-sub">Cypress, Texas • Award-Winning BBQ</div>
-      </div>
-
-      <div class="footer-links">
+      <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="menu.html">Menu</a>
         <a href="catering.html">Catering</a>
-        <a href="events.html">Pop-Ups & Events</a>
-        <a href="competition.html">Competition Team</a>
+        <a href="popups.html">Pop-Ups</a>
+        <a href="competitions.html">Competition Team</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </div>
+    </div>
+  </nav>
 
-      <div class="footer-right">
-        <a class="btn small" href="tel:+12817321862">📞 (281) 732-1862</a>
-        <div class="copyright">
-          © <span id="year"></span> Jesse’s BBQ. All rights reserved.
+  <section class="header">
+    <div class="container">
+      <div class="eyebrow">Jesse’s BBQ Gallery</div>
+      <h1>Gallery</h1>
+      <p>
+        Take a look at the barbecue, competition cooking, events, and behind-the-scenes moments from Jesse’s BBQ.
+      </p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery">
+
+        <div class="photo-card"><img src="IMG_0027.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_0028.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_2111.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_2306.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_2314.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_2844.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_2845.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3083.png" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3093.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3094.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3226.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3571.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3579.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3583.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3586.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_3589.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_4940.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_4941.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_4960.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_4993.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_5262.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_5484.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_5490.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_5653.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_5988.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6390.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6468.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6790.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6806.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6807.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6810.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6865.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6892.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_6900.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_7110.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_7305.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_7438.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_7709.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8094.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8297.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8299.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8428.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8430.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8431.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8487.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8489.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8503.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8504.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8505.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8507.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8508.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8511.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8514.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8515.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8517.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8551.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8854.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8858.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_8863.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9257.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9263.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9379.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9522.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9647.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9712.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9918.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="IMG_9920.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="phonto.png" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="57626155355__FC1BD9D6-0815-4155-A642-FB902575EEDC.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+        <div class="photo-card"><img src="D756F25B-9E39-48BA-A037-BE46DA3F7FA4.jpeg" alt="Jesse's BBQ photo" onclick="openLightbox(this.src)"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="section-title">Need BBQ For Your Event?</h2>
+      <p class="section-sub">
+        Contact Jesse’s BBQ for catering, pop-up events, and barbecue services across Cypress and the Houston area.
+      </p>
+      <a href="contact.html" class="btn btn-primary">Contact Jesse’s BBQ</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Jesse’s BBQ</h3>
+          <p>
+            Award-winning BBQ in Cypress, Texas serving catering, pop-up events, and competition-level barbecue.
+          </p>
         </div>
+
+        <div>
+          <a href="tel:12817321862">281-732-1862</a>
+          <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
+          <p>Cypress, Texas</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © Jesse’s BBQ. All rights reserved.
       </div>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightboxImg" src="" alt="Expanded gallery image">
+  </div>
+
+  <script>
+    function openLightbox(src){
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox(){
+      document.getElementById('lightbox').classList.remove('active');
+    }
+  </script>
+
 </body>
 </html>
