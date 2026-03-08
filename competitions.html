@@ -1,586 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Competition Team | Jesse's BBQ</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#090909;
-  --bg-soft:#121212;
-  --card:#181818;
-  --border:#2a2a2a;
-  --text:#f7f2eb;
-  --muted:#d9cbbc;
-  --accent:#e56a1c;
-  --accent-dark:#b64a08;
-  --accent-light:#ffb36f;
-  --white:#ffffff;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:"Montserrat", sans-serif;
-  line-height:1.6;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-.container{
-  width:min(1200px, 92%);
-  margin:auto;
-}
-
-/* NAV */
-nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(9,9,9,.96);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  backdrop-filter:blur(8px);
-}
-
-.nav-wrap{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:12px;
-  padding:16px 0;
-}
-
-.brand{
-  font-family:"Bebas Neue", sans-serif;
-  font-size:34px;
-  letter-spacing:2px;
-  color:var(--accent);
-  line-height:1;
-}
-
-.nav-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px 18px;
-  width:100%;
-}
-
-.nav-links a{
-  color:var(--white);
-  font-size:14px;
-  font-weight:600;
-  opacity:.95;
-}
-
-/* HEADER */
-.header{
-  padding:80px 0 60px;
-  background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.82)),
-    url("./images%3Abanner.jpg") center/cover no-repeat;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.eyebrow{
-  display:inline-block;
-  margin-bottom:14px;
-  color:var(--accent-light);
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-size:13px;
-  font-weight:700;
-}
-
-.header h1{
-  margin:0 0 14px;
-  font-family:"Bebas Neue", sans-serif;
-  font-size:64px;
-  letter-spacing:2px;
-  line-height:1;
-}
-
-.header p{
-  max-width:760px;
-  margin:0;
-  color:#f1e5d9;
-  font-size:19px;
-}
-
-/* SECTIONS */
-section{
-  padding:68px 0;
-}
-
-.section-title{
-  margin:0 0 12px;
-  font-family:"Bebas Neue", sans-serif;
-  font-size:44px;
-  letter-spacing:1px;
-  line-height:1;
-  text-transform:uppercase;
-}
-
-.section-sub{
-  max-width:800px;
-  margin:0 0 28px;
-  color:var(--muted);
-  font-size:18px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
-}
-
-.card p{
-  color:var(--muted);
-  margin:0 0 16px;
-}
-
-/* INFO GRID */
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-}
-
-.info-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:24px;
-}
-
-.info-card h3{
-  margin:0 0 10px;
-  font-family:"Bebas Neue", sans-serif;
-  font-size:30px;
-  letter-spacing:1px;
-  color:var(--accent-light);
-}
-
-.info-card p{
-  margin:0 0 14px;
-  color:var(--muted);
-}
-
-.info-card ul{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-}
-
-.info-card li{
-  margin:8px 0;
-}
-
-/* SLIDER */
-.slider-section{
-  background:
-    radial-gradient(circle at top, rgba(229,106,28,.12), transparent 45%),
-    var(--bg-soft);
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.slider-shell{
-  position:relative;
-  background:rgba(255,255,255,.02);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:22px 18px 26px;
-}
-
-.slider-header{
-  text-align:center;
-  margin-bottom:18px;
-}
-
-.slider-header h2{
-  margin:0 0 8px;
-  font-family:"Bebas Neue", sans-serif;
-  font-size:42px;
-  letter-spacing:1px;
-  color:var(--accent);
-}
-
-.slider-header p{
-  margin:0;
-  color:var(--muted);
-}
-
-.slider-wrap{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.slider-btn{
-  flex:0 0 auto;
-  width:46px;
-  height:46px;
-  border:none;
-  border-radius:50%;
-  background:#111;
-  color:#fff;
-  font-size:26px;
-  cursor:pointer;
-  border:1px solid var(--border);
-}
-
-.slider-btn:hover{
-  background:var(--accent);
-}
-
-.photo-track{
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns:calc(50% - 10px);
-  gap:18px;
-  padding:6px 2px;
-  scrollbar-width:none;
-  width:100%;
-}
-
-.photo-track::-webkit-scrollbar{
-  display:none;
-}
-
-.photo-card{
-  background:#111;
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-  min-height:280px;
-}
-
-.photo-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  aspect-ratio:4/3;
-}
-
-.slider-note{
-  text-align:center;
-  color:#a99886;
-  font-size:14px;
-  margin-top:18px;
-}
-
-/* CTA */
-.cta{
-  text-align:center;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:10px;
-  font-weight:700;
-  transition:.2s ease;
-  text-align:center;
-  margin-top:8px;
-}
-
-.btn-primary{
-  background:linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color:#fff;
-}
-
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.05);
-  color:#fff;
-}
-
-.btn:hover{
-  transform:translateY(-1px);
-}
-
-/* FOOTER */
-footer{
-  background:#070707;
-  border-top:1px solid rgba(255,255,255,.06);
-  padding:40px 0 24px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
-
-footer h3{
-  margin:0 0 12px;
-  font-family:"Bebas Neue", sans-serif;
-  font-size:30px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-footer p,
-footer a{
-  margin:8px 0;
-  color:var(--muted);
-  display:block;
-}
-
-.copyright{
-  text-align:center;
-  color:#9d8c7a;
-  font-size:14px;
-  margin-top:22px;
-}
-
-/* MOBILE */
-@media (max-width: 900px){
-  .info-grid,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .header h1{
-    font-size:52px;
-  }
-
-  .photo-track{
-    grid-auto-columns:85%;
-  }
-}
-
-@media (max-width: 640px){
-  .brand{
-    font-size:30px;
-  }
-
-  .nav-links{
-    gap:10px 14px;
-  }
-
-  .nav-links a{
-    font-size:13px;
-  }
-
-  .header{
-    padding:60px 0 50px;
-  }
-
-  .header h1{
-    font-size:42px;
-  }
-
-  .header p{
-    font-size:17px;
-  }
-
-  .section-title{
-    font-size:36px;
-  }
-
-  .slider-shell{
-    padding:18px 12px 22px;
-  }
-
-  .slider-header h2{
-    font-size:34px;
-  }
-
-  .slider-btn{
-    width:42px;
-    height:42px;
-    font-size:24px;
-  }
-
-  .photo-track{
-    grid-auto-columns:100%;
-    gap:14px;
-  }
-
-  .photo-card{
-    min-height:240px;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competition Team | Jesse's BBQ</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#090909;
+      --bg-soft:#121212;
+      --card:#161616;
+      --card-2:#1b1b1b;
+      --border:#2b2b2b;
+      --text:#f7f2eb;
+      --muted:#d6c8ba;
+      --accent:#e46a1c;
+      --accent-dark:#b84a08;
+      --accent-light:#ffb06e;
+      --white:#ffffff;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Montserrat", sans-serif;
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1200px, 92%);
+      margin:auto;
+    }
+
+    /* NAV */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(9,9,9,.96);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+    }
+
+    .nav-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:12px;
+      padding:16px 0;
+    }
+
+    .brand{
+      font-family:"Bebas Neue", sans-serif;
+      font-size:34px;
+      letter-spacing:2px;
+      color:var(--accent);
+      line-height:1;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+      width:100%;
+    }
+
+    .nav-links a{
+      color:var(--white);
+      font-size:14px;
+      font-weight:600;
+      opacity:.95;
+    }
+
+    /* HEADER */
+    .header{
+      padding:72px 0 28px;
+      background:#0b0b0b;
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:14px;
+      color:var(--accent-light);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .header h1{
+      margin:0 0 14px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:58px;
+      letter-spacing:2px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .header p{
+      max-width:780px;
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    /* SECTIONS */
+    section{
+      padding:64px 0;
+    }
+
+    .section-title{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:42px;
+      letter-spacing:1px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .section-sub{
+      max-width:800px;
+      margin:0 0 28px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .info-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+    }
+
+    .info-card h2{
+      margin:0 0 16px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:42px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .info-card p{
+      color:var(--muted);
+      margin:0 0 16px;
+      font-size:17px;
+    }
+
+    .info-card ul{
+      margin:0;
+      padding-left:22px;
+      color:var(--muted);
+    }
+
+    .info-card li{
+      margin:10px 0;
+    }
+
+    /* MOCKUP-STYLE SLIDER SECTION */
+    .competition-gallery{
+      padding:76px 0;
+      background:
+        radial-gradient(circle at top, rgba(228,106,28,.10), transparent 30%),
+        linear-gradient(180deg, #0d0d0d 0%, #111111 100%);
+    }
+
+    .gallery-shell{
+      max-width:980px;
+      margin:0 auto;
+      padding:34px 24px 30px;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at center, rgba(228,106,28,.08), transparent 48%),
+        #121212;
+      box-shadow:0 18px 40px rgba(0,0,0,.32);
+    }
+
+    .gallery-title{
+      margin:0 0 8px;
+      text-align:center;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:44px;
+      letter-spacing:1px;
+      color:var(--accent);
+      text-transform:uppercase;
+    }
+
+    .gallery-sub{
+      margin:0 0 24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .slider-card{
+      position:relative;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
+        #151515;
+      padding:22px 20px 26px;
+      overflow:hidden;
+    }
+
+    .slider-card h3{
+      margin:0 0 8px;
+      text-align:center;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:34px;
+      letter-spacing:1px;
+      color:var(--accent);
+      text-transform:uppercase;
+    }
+
+    .slider-card p{
+      margin:0 0 20px;
+      text-align:center;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .slider-wrap{
+      position:relative;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .slider-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:#0e0e0e;
+      color:#fff;
+      font-size:26px;
+      line-height:1;
+      cursor:pointer;
+      z-index:5;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 18px rgba(0,0,0,.28);
+    }
+
+    .slider-btn:hover{
+      background:var(--accent);
+    }
+
+    .slider-btn.left{
+      left:8px;
+    }
+
+    .slider-btn.right{
+      right:8px;
+    }
+
+    .slider-viewport{
+      overflow:hidden;
+      width:100%;
+      border-radius:18px;
+    }
+
+    .slider-track{
+      display:flex;
+      transition:transform .45s ease;
+      will-change:transform;
+    }
+
+    .slide{
+      min-width:100%;
+      padding:0 10px;
+    }
+
+    .slide-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .photo{
+      background:#0f0f0f;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.06);
+      aspect-ratio:4/3;
+    }
+
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .dots{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin:18px 0 22px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#7a6a5b;
+      opacity:.55;
+      transition:.2s ease;
+    }
+
+    .dot.active{
+      background:var(--accent);
+      opacity:1;
+      transform:scale(1.12);
+    }
+
+    .slider-cta{
+      text-align:center;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:10px;
+      font-weight:700;
+      transition:.2s ease;
+      text-align:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+    }
+
+    /* FOOTER CTA */
+    .cta{
+      text-align:center;
+      background:#0f0f0f;
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .cta .section-sub{
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#070707;
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:40px 0 24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    footer h3{
+      margin:0 0 12px;
+      font-family:"Bebas Neue", sans-serif;
+      font-size:30px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    footer p,
+    footer a{
+      margin:8px 0;
+      color:var(--muted);
+      display:block;
+    }
+
+    .copyright{
+      text-align:center;
+      color:#9d8c7a;
+      font-size:14px;
+      margin-top:22px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px){
+      .info-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .header h1{
+        font-size:48px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .brand{
+        font-size:30px;
+      }
+
+      .nav-links{
+        gap:10px 14px;
+      }
+
+      .nav-links a{
+        font-size:13px;
+      }
+
+      .header{
+        padding:58px 0 24px;
+      }
+
+      .header h1{
+        font-size:40px;
+      }
+
+      .header p,
+      .section-sub{
+        font-size:17px;
+      }
+
+      .section-title,
+      .info-card h2,
+      .gallery-title{
+        font-size:36px;
+      }
+
+      .gallery-shell{
+        padding:26px 14px 22px;
+        border-radius:22px;
+      }
+
+      .slider-card{
+        padding:18px 12px 22px;
+      }
+
+      .slider-card h3{
+        font-size:30px;
+      }
+
+      .slide{
+        padding:0 2px;
+      }
+
+      .slide-grid{
+        gap:10px;
+      }
+
+      .slider-btn{
+        width:40px;
+        height:40px;
+        font-size:22px;
+      }
+
+      .slider-btn.left{
+        left:2px;
+      }
+
+      .slider-btn.right{
+        right:2px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="container nav-wrap">
-    <div class="brand">JESSE'S BBQ</div>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand">JESSE'S BBQ</div>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="menu.html">Menu</a>
-      <a href="catering.html">Catering</a>
-      <a href="popups.html">Pop-Ups</a>
-      <a href="competitions.html">Competition Team</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<section class="header">
-  <div class="container">
-    <div class="eyebrow">Competition BBQ • Cypress, Texas</div>
-    <h1>Competition Team</h1>
-    <p>
-      Jesse’s BBQ proudly competes in Texas barbecue competitions, bringing award-winning techniques,
-      serious pitmaster experience, and competition-level pride to every event and every plate we serve.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2 class="section-title">Built From Competition BBQ</h2>
-    <p class="section-sub">
-      Competition barbecue is where Jesse’s passion for barbecue took shape. Every event sharpens the process,
-      from fire management and timing to flavor, texture, and presentation.
-    </p>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>What We Compete In</h3>
-        <p>Jesse’s BBQ competes in Texas cookoffs and barbecue events that test consistency, flavor, and technique.</p>
-        <ul>
-          <li>Brisket</li>
-          <li>Ribs</li>
-          <li>Chicken</li>
-          <li>Seafood and specialty categories</li>
-        </ul>
-      </div>
-
-      <div class="info-card">
-        <h3>Sponsorship Opportunities</h3>
-        <p>
-          Local businesses and supporters can partner with Jesse’s BBQ to help support competition entries,
-          supplies, travel, and event appearances.
-        </p>
-        <ul>
-          <li>Brand visibility at events</li>
-          <li>Recognition through promotions and media</li>
-          <li>Support a local Texas BBQ team</li>
-        </ul>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="catering.html">Catering</a>
+        <a href="popups.html">Pop-Ups</a>
+        <a href="competitions.html">Competition Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="slider-section">
-  <div class="container">
-    <div class="slider-shell">
-      <div class="slider-header">
-        <h2>Competition Photos</h2>
-        <p>Take a look at some of our BBQ competition highlights.</p>
-      </div>
+  <section class="header">
+    <div class="container">
+      <div class="eyebrow">Competition BBQ • Cypress, Texas</div>
+      <h1>Competition Team</h1>
+      <p>
+        Jesse’s BBQ proudly competes in Texas barbecue competitions, bringing award-winning techniques and pitmaster experience to every event, every category, and every plate we serve.
+      </p>
+    </div>
+  </section>
 
-      <div class="slider-wrap">
-        <button class="slider-btn" onclick="scrollSlider(-1)" aria-label="Previous photos">&#8249;</button>
-
-        <div class="photo-track" id="photoTrack">
-          <div class="photo-card"><img src="IMG_0027.jpeg" alt="Competition BBQ photo 1"></div>
-          <div class="photo-card"><img src="IMG_0028.jpeg" alt="Competition BBQ photo 2"></div>
-          <div class="photo-card"><img src="IMG_3083.png" alt="Competition BBQ photo 3"></div>
-          <div class="photo-card"><img src="IMG_5484.jpeg" alt="Competition BBQ photo 4"></div>
-          <div class="photo-card"><img src="IMG_5490.jpeg" alt="Competition BBQ photo 5"></div>
-          <div class="photo-card"><img src="IMG_5988.jpeg" alt="Competition BBQ photo 6"></div>
-          <div class="photo-card"><img src="IMG_6390.jpeg" alt="Competition BBQ photo 7"></div>
-          <div class="photo-card"><img src="IMG_6468.jpeg" alt="Competition BBQ photo 8"></div>
-          <div class="photo-card"><img src="IMG_6790.jpeg" alt="Competition BBQ photo 9"></div>
-          <div class="photo-card"><img src="IMG_6806.jpeg" alt="Competition BBQ photo 10"></div>
-          <div class="photo-card"><img src="IMG_6807.jpeg" alt="Competition BBQ photo 11"></div>
-          <div class="photo-card"><img src="IMG_6810.jpeg" alt="Competition BBQ photo 12"></div>
-          <div class="photo-card"><img src="IMG_6865.jpeg" alt="Competition BBQ photo 13"></div>
-          <div class="photo-card"><img src="IMG_6892.jpeg" alt="Competition BBQ photo 14"></div>
-          <div class="photo-card"><img src="IMG_6900.jpeg" alt="Competition BBQ photo 15"></div>
-          <div class="photo-card"><img src="IMG_7438.jpeg" alt="Competition BBQ photo 16"></div>
-          <div class="photo-card"><img src="IMG_8297.jpeg" alt="Competition BBQ photo 17"></div>
-          <div class="photo-card"><img src="IMG_8299.jpeg" alt="Competition BBQ photo 18"></div>
-          <div class="photo-card"><img src="IMG_8507.jpeg" alt="Competition BBQ photo 19"></div>
-          <div class="photo-card"><img src="IMG_8511.jpeg" alt="Competition BBQ photo 20"></div>
-          <div class="photo-card"><img src="IMG_8551.jpeg" alt="Competition BBQ photo 21"></div>
-          <div class="photo-card"><img src="IMG_9257.jpeg" alt="Competition BBQ photo 22"></div>
-          <div class="photo-card"><img src="IMG_9263.jpeg" alt="Competition BBQ photo 23"></div>
-          <div class="photo-card"><img src="IMG_9379.jpeg" alt="Competition BBQ photo 24"></div>
-          <div class="photo-card"><img src="IMG_9647.jpeg" alt="Competition BBQ photo 25"></div>
-          <div class="photo-card"><img src="IMG_9712.jpeg" alt="Competition BBQ photo 26"></div>
+  <section>
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h2>BBQ Competitions</h2>
+          <p>
+            Competition BBQ is where Jesse’s passion for barbecue began. Competing across Texas has helped refine the techniques and flavors that make Jesse’s BBQ stand out.
+          </p>
+          <p>
+            From perfectly smoked brisket to award-worthy ribs, competition cooking pushes every detail to the next level.
+          </p>
+          <ul>
+            <li>Texas BBQ competitions</li>
+            <li>Competitive brisket, ribs, and chicken</li>
+            <li>Event appearances</li>
+            <li>Community BBQ events</li>
+          </ul>
         </div>
 
-        <button class="slider-btn" onclick="scrollSlider(1)" aria-label="Next photos">&#8250;</button>
-      </div>
-
-      <div class="slider-note">Swipe on mobile or use the arrows to scroll through the gallery.</div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container">
-    <h2 class="section-title">Interested In Supporting Jesse’s BBQ?</h2>
-    <p class="section-sub">
-      Contact us to ask about sponsorships, partnerships, event appearances, and competition support.
-    </p>
-    <a href="contact.html" class="btn btn-primary">Contact Jesse’s BBQ</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Jesse’s BBQ</h3>
-        <p>
-          Award-winning BBQ in Cypress, Texas serving catering, pop-up events, and competition-level barbecue.
-        </p>
-      </div>
-
-      <div>
-        <a href="tel:12817321862">281-732-1862</a>
-        <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
-        <p>Cypress, Texas</p>
+        <div class="info-card">
+          <h2>Sponsorships</h2>
+          <p>
+            Local businesses and supporters can sponsor Jesse’s BBQ competition team. Sponsorship helps support travel, competition fees, and supplies while promoting local partners.
+          </p>
+          <p>
+            Sponsors receive recognition through events, social media, and BBQ competition appearances.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="copyright">
-      © Jesse’s BBQ. All rights reserved.
+  <section class="competition-gallery">
+    <div class="container">
+      <div class="gallery-shell">
+        <h2 class="gallery-title">Competition Photos</h2>
+        <p class="gallery-sub">Take a look at some of our BBQ competition highlights.</p>
+
+        <div class="slider-card">
+          <h3>Competition Photos</h3>
+          <p>Take a look at some of our BBQ competition highlights.</p>
+
+          <div class="slider-wrap">
+            <button class="slider-btn left" onclick="moveSlide(-1)" aria-label="Previous slide">&#8249;</button>
+
+            <div class="slider-viewport">
+              <div class="slider-track" id="sliderTrack">
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_0027.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_0028.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_3083.png" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_5484.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_5490.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_5988.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6390.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6468.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_6790.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6806.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6807.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6810.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_6865.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6892.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_6900.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_7438.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_8297.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_8299.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_8507.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_8511.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_8551.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_9257.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_9263.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_9379.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-grid">
+                    <div class="photo"><img src="IMG_9647.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_9712.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_0027.jpeg" alt="Competition photo"></div>
+                    <div class="photo"><img src="IMG_0028.jpeg" alt="Competition photo"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <button class="slider-btn right" onclick="moveSlide(1)" aria-label="Next slide">&#8250;</button>
+          </div>
+
+          <div class="dots" id="dots"></div>
+
+          <div class="slider-cta">
+            <a href="contact.html" class="btn btn-primary">Contact Jesse’s BBQ</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-function scrollSlider(direction){
-  const track = document.getElementById('photoTrack');
-  const amount = track.clientWidth * 0.8;
-  track.scrollBy({
-    left: direction * amount,
-    behavior: 'smooth'
-  });
-}
-</script>
+  <section class="cta">
+    <div class="container">
+      <h2 class="section-title">Interested in sponsoring Jesse’s BBQ?</h2>
+      <p class="section-sub">
+        Contact us to learn more about partnership opportunities, event appearances, and local sponsorships.
+      </p>
+      <a href="contact.html" class="btn btn-primary">Contact Jesse’s BBQ</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Jesse’s BBQ</h3>
+          <p>
+            Award-winning BBQ in Cypress, Texas serving catering, pop-up events, and competition-level barbecue.
+          </p>
+        </div>
+
+        <div>
+          <a href="tel:12817321862">281-732-1862</a>
+          <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
+          <p>Cypress, Texas</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © Jesse’s BBQ. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const track = document.getElementById('sliderTrack');
+    const slides = document.querySelectorAll('.slide');
+    const dotsWrap = document.getElementById('dots');
+    const totalSlides = slides.length;
+
+    function buildDots(){
+      for(let i = 0; i < totalSlides; i++){
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateDots(){
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function goToSlide(index){
+      currentSlide = index;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    }
+
+    function moveSlide(direction){
+      currentSlide += direction;
+
+      if(currentSlide < 0){
+        currentSlide = totalSlides - 1;
+      }
+
+      if(currentSlide >= totalSlides){
+        currentSlide = 0;
+      }
+
+      goToSlide(currentSlide);
+    }
+
+    buildDots();
+  </script>
 
 </body>
 </html>
