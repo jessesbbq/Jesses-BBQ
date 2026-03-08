@@ -1,513 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jesse's BBQ | Cypress, Texas</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#090909;
-      --bg-soft:#121212;
-      --card:#181818;
-      --border:#2a2a2a;
-      --text:#f7f2eb;
-      --muted:#d9cbbc;
-      --accent:#e56a1c;
-      --accent-dark:#b64a08;
-      --accent-light:#ffb36f;
-      --white:#ffffff;
-    }
+<title>Jesse's BBQ | Cypress Texas</title>
 
-    *{
-      box-sizing:border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    html{
-      scroll-behavior:smooth;
-    }
+<style>
 
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Montserrat", sans-serif;
-      line-height:1.6;
-    }
+body{
+margin:0;
+font-family:Montserrat, sans-serif;
+background:#0c0c0c;
+color:white;
+}
 
-    img{
-      max-width:100%;
-      display:block;
-    }
+/* NAV */
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+nav{
+background:#111;
+border-bottom:1px solid #222;
+padding:18px 8%;
+}
 
-    .container{
-      width:min(1200px, 92%);
-      margin:auto;
-    }
+.nav-wrap{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
 
-    /* NAV */
-    nav{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(9,9,9,.96);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(8px);
-    }
+.brand{
+font-family:"Bebas Neue";
+font-size:34px;
+letter-spacing:2px;
+color:#ff7a18;
+}
 
-    .nav-wrap{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap:12px;
-      padding:16px 0;
-    }
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
 
-    .brand{
-      font-family:"Bebas Neue", sans-serif;
-      font-size:34px;
-      letter-spacing:2px;
-      color:var(--accent);
-      line-height:1;
-    }
+.nav-links a{
+color:white;
+font-size:14px;
+text-decoration:none;
+font-weight:600;
+}
 
-    .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 18px;
-      width:100%;
-    }
+/* HERO */
 
-    .nav-links a{
-      color:var(--white);
-      font-size:14px;
-      font-weight:600;
-      opacity:.95;
-    }
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
 
-    .nav-links a:hover{
-      color:var(--accent-light);
-    }
+background:
+linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
+url("./images%3Abanner.jpg");
 
-    /* HERO */
-    .hero{
-      min-height:88vh;
-      display:flex;
-      align-items:center;
-      background:
-        linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.78)),
-        url("images:banner.jpg") center/cover no-repeat;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+background-size:cover;
+background-position:center;
+}
 
-    .hero-content{
-      max-width:760px;
-      padding:70px 0;
-    }
+.hero-content{
+max-width:700px;
+padding:60px 8%;
+}
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:14px;
-      color:var(--accent-light);
-      text-transform:uppercase;
-      letter-spacing:2px;
-      font-size:13px;
-      font-weight:700;
-    }
+.hero h1{
+font-family:"Bebas Neue";
+font-size:60px;
+letter-spacing:2px;
+line-height:1;
+margin-bottom:15px;
+}
 
-    h1{
-      margin:0 0 18px;
-      font-family:"Bebas Neue", sans-serif;
-      font-size:72px;
-      line-height:.95;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
+.hero p{
+font-size:18px;
+color:#ddd;
+margin-bottom:25px;
+}
 
-    .hero p{
-      margin:0 0 28px;
-      max-width:700px;
-      font-size:20px;
-      color:#f1e5d9;
-    }
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
 
-    .hero-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:28px;
-    }
+.btn{
+padding:14px 22px;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
+}
 
-    .btn{
-      display:inline-block;
-      padding:14px 22px;
-      border-radius:10px;
-      font-weight:700;
-      transition:.2s ease;
-      text-align:center;
-    }
+.btn-primary{
+background:#ff7a18;
+color:white;
+}
 
-    .btn-primary{
-      background:linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color:#fff;
-    }
+.btn-secondary{
+border:1px solid white;
+color:white;
+}
 
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.05);
-      color:#fff;
-    }
+/* ABOUT */
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+.about{
+background:#121212;
+padding:80px 10%;
+text-align:center;
+}
 
-    /* SECTION BASE */
-    section{
-      padding:72px 0;
-    }
+.about img{
+max-width:320px;
+margin:auto;
+margin-bottom:30px;
+border-radius:10px;
+}
 
-    .section-title{
-      margin:0 0 12px;
-      font-family:"Bebas Neue", sans-serif;
-      font-size:44px;
-      letter-spacing:1px;
-      line-height:1;
-      text-transform:uppercase;
-    }
+.about h2{
+font-family:"Bebas Neue";
+font-size:44px;
+margin-bottom:20px;
+}
 
-    .section-sub{
-      max-width:780px;
-      margin:0 0 30px;
-      color:var(--muted);
-      font-size:18px;
-    }
+.about p{
+max-width:700px;
+margin:auto;
+color:#ccc;
+line-height:1.7;
+font-size:17px;
+}
 
-    /* ABOUT */
-    .about{
-      background:var(--bg-soft);
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+/* SERVICES */
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:center;
-    }
+.services{
+padding:80px 10%;
+}
 
-    .about-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:22px;
-    }
+.services h2{
+text-align:center;
+font-family:"Bebas Neue";
+font-size:44px;
+margin-bottom:40px;
+}
 
-    .about-card img{
-      width:100%;
-      border-radius:12px;
-    }
+.service-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+}
 
-    .about-text p{
-      color:var(--muted);
-      font-size:17px;
-      margin:0 0 16px;
-    }
+.service-card{
+background:#161616;
+border:1px solid #222;
+padding:25px;
+border-radius:8px;
+}
 
-    /* SERVICES */
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
-    }
+.service-card h3{
+font-family:"Bebas Neue";
+font-size:28px;
+color:#ff7a18;
+margin-bottom:10px;
+}
 
-    .service-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:24px;
-    }
+.service-card p{
+color:#ccc;
+}
 
-    .service-card h3{
-      margin:0 0 10px;
-      font-family:"Bebas Neue", sans-serif;
-      font-size:30px;
-      letter-spacing:1px;
-      color:var(--accent-light);
-      text-transform:uppercase;
-    }
+/* CTA */
 
-    .service-card p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:15px;
-    }
+.cta{
+padding:70px 10%;
+background:#111;
+text-align:center;
+}
 
-    .service-card a{
-      font-weight:700;
-      color:#fff;
-    }
+.cta h2{
+font-family:"Bebas Neue";
+font-size:40px;
+margin-bottom:20px;
+}
 
-    /* CTA */
-    .cta{
-      background:linear-gradient(135deg, #1a1a1a, #0d0d0d);
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      text-align:center;
-    }
+.cta p{
+color:#ccc;
+margin-bottom:25px;
+}
 
-    .cta .section-sub{
-      margin-left:auto;
-      margin-right:auto;
-    }
+/* FOOTER */
 
-    .cta .hero-buttons{
-      justify-content:center;
-    }
+footer{
+background:#090909;
+padding:40px 10%;
+text-align:center;
+border-top:1px solid #222;
+}
 
-    /* FOOTER */
-    footer{
-      background:#070707;
-      border-top:1px solid rgba(255,255,255,.06);
-      padding:40px 0 24px;
-    }
+footer p{
+color:#777;
+font-size:14px;
+}
 
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
+</style>
 
-    footer h3{
-      margin:0 0 12px;
-      font-family:"Bebas Neue", sans-serif;
-      font-size:30px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-    }
-
-    footer p,
-    footer a{
-      margin:8px 0;
-      color:var(--muted);
-      display:block;
-    }
-
-    .copyright{
-      text-align:center;
-      color:#9d8c7a;
-      font-size:14px;
-      margin-top:22px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 900px){
-      .about-grid,
-      .services-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:56px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .brand{
-        font-size:30px;
-      }
-
-      .nav-links{
-        gap:10px 14px;
-      }
-
-      .nav-links a{
-        font-size:13px;
-      }
-
-      .hero{
-        min-height:auto;
-      }
-
-      .hero-content{
-        padding:60px 0;
-      }
-
-      h1{
-        font-size:46px;
-      }
-
-      .hero p{
-        font-size:18px;
-      }
-
-      .section-title{
-        font-size:36px;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .hero-buttons{
-        width:100%;
-      }
-
-      section{
-        padding:60px 0;
-      }
-    }
-  </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">Jesse's BBQ</a>
+<nav>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-        <a href="catering.html">Catering</a>
-        <a href="popups.html">Pop-Ups</a>
-        <a href="competitions.html">Competition Team</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </nav>
+<div class="nav-wrap">
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="eyebrow">Award-Winning BBQ • Cypress, Texas</div>
+<div class="brand">JESSE'S BBQ</div>
 
-        <h1>Real Wood.<br>Slow Smoke.<br>Texas Flavor.</h1>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="menu.html">Menu</a>
+<a href="catering.html">Catering</a>
+<a href="popups.html">Pop-Ups</a>
+<a href="competitions.html">Competition Team</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
 
-        <p>
-          Jesse’s BBQ brings award-winning barbecue to Cypress, Houston, and surrounding areas
-          with catering services, pop-up events, and competition-level barbecue rooted in true Texas tradition.
-        </p>
+</div>
 
-        <div class="hero-buttons">
-          <a href="catering.html" class="btn btn-primary">Book Catering</a>
-          <a href="contact.html" class="btn btn-secondary">Call/Text 281-732-1862</a>
-        </div>
-      </div>
-    </div>
-  </section>
+</nav>
 
-  <section class="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-card">
-          <img src="images:logo.JPG" alt="Jesse's BBQ Logo">
-        </div>
+<section class="hero">
 
-        <div class="about-text">
-          <h2 class="section-title">Award-Winning BBQ</h2>
+<div class="hero-content">
 
-          <p>
-            Jesse’s BBQ is a Cypress, Texas based BBQ business known for award-winning barbecue, catering,
-            and pop-up events throughout the Houston area.
-          </p>
+<h1>REAL WOOD.<br>SLOW SMOKE.<br>TEXAS FLAVOR.</h1>
 
-          <p>
-            From smoked brisket and ribs to seasonal crawfish boils, everything is prepared with real wood fire,
-            traditional techniques, and the bold flavors Texas barbecue is known for.
-          </p>
+<p>
 
-          <div class="hero-buttons">
-            <a href="about.html" class="btn btn-primary">Learn More</a>
-            <a href="contact.html" class="btn btn-secondary">Contact Jesse’s BBQ</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+Jesse’s BBQ brings award-winning barbecue to Cypress, Houston, and surrounding areas with catering services, pop-up events, and competition-level barbecue rooted in true Texas tradition.
 
-  <section>
-    <div class="container">
-      <h2 class="section-title">What Jesse’s BBQ Offers</h2>
-      <p class="section-sub">
-        Catering, weekend pop-ups, and competition-level barbecue for customers across Cypress, Houston, and surrounding areas.
-      </p>
+</p>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Catering</h3>
-          <p>
-            From backyard parties to weddings and corporate lunches, Jesse’s BBQ provides full catering services
-            featuring authentic Texas barbecue and classic sides.
-          </p>
-          <a href="catering.html">View Catering →</a>
-        </div>
+<div class="hero-buttons">
 
-        <div class="service-card">
-          <h3>Weekend Pop-Ups</h3>
-          <p>
-            Weekly pop-up events offer rotating BBQ menus with customer favorites and seasonal specials available for pickup.
-          </p>
-          <a href="popups.html">See Pop-Up Info →</a>
-        </div>
+<a class="btn btn-primary" href="catering.html">Book Catering</a>
 
-        <div class="service-card">
-          <h3>Competition Team</h3>
-          <p>
-            Jesse’s BBQ proudly competes in Texas BBQ competitions, bringing award-winning techniques and pitmaster experience to every meal served.
-          </p>
-          <a href="competitions.html">View Competition Team →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<a class="btn btn-secondary" href="contact.html">Call/Text 281-732-1862</a>
 
-  <section class="cta">
-    <div class="container">
-      <h2 class="section-title">Need BBQ for an Event?</h2>
-      <p class="section-sub">
-        Contact Jesse’s BBQ for catering, pop-ups, and event services across Cypress and the Houston area.
-      </p>
+</div>
 
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-        <a href="catering.html" class="btn btn-secondary">Book Catering</a>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Jesse’s BBQ</h3>
-          <p>
-            Award-winning BBQ in Cypress, Texas serving catering, pop-up events, and competition-level barbecue.
-          </p>
-        </div>
+</section>
 
-        <div>
-          <a href="tel:12817321862">281-732-1862</a>
-          <a href="mailto:jessesbbqcypress@gmail.com">jessesbbqcypress@gmail.com</a>
-          <p>Cypress, Texas</p>
-        </div>
-      </div>
+<section class="about">
 
-      <div class="copyright">
-        © Jesse’s BBQ. All rights reserved.
-      </div>
-    </div>
-  </footer>
+<img src="./images%3Alogo.JPG" alt="Jesse's BBQ Logo">
+
+<h2>AWARD-WINNING BBQ</h2>
+
+<p>
+
+Jesse’s BBQ is a Cypress, Texas based BBQ business known for award-winning barbecue, catering, and pop-up events throughout the Houston area. From smoked brisket and ribs to seasonal crawfish boils, everything is prepared with real wood fire, traditional techniques, and the bold flavors Texas barbecue is known for.
+
+</p>
+
+</section>
+
+<section class="services">
+
+<h2>WHAT JESSE'S BBQ OFFERS</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h3>Catering</h3>
+<p>Full service catering for parties, weddings, corporate events, and gatherings across Cypress and the Houston area.</p>
+</div>
+
+<div class="service-card">
+<h3>Weekend Pop-Ups</h3>
+<p>Weekly rotating BBQ menus with smoked meats, specials, and seasonal favorites available for pickup.</p>
+</div>
+
+<div class="service-card">
+<h3>Competition BBQ</h3>
+<p>Jesse’s BBQ proudly competes in Texas BBQ competitions bringing award-winning techniques to every plate.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Need BBQ for an event?</h2>
+
+<p>Contact Jesse’s BBQ for catering and event services across Cypress and Houston.</p>
+
+<a class="btn btn-primary" href="contact.html">Get a Quote</a>
+
+</section>
+
+<footer>
+
+<p>©Jesse's BBQ • Cypress Texas</p>
+
+</footer>
 
 </body>
 </html>
